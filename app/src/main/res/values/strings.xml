@@ -1,0 +1,90 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Teman Nelayan</string>
+    <string name="api_key_weather" translatable="false">9b3ba99b07215841121bae2e08fb7a7a</string>
+    <string name="title_forecast">Prediksi Hari Ini</string>
+    <string name="btn_more">Info</string>
+    <string name="title_tides">Pasang Surut</string>
+    <string name="title_weather">Cuaca</string>
+    <string name="title_solunar">Solunar</string>
+
+    <string name="format_wind_kmh" translatable="false">Angin bertiup %.1f m/s dari arah %s</string>
+
+    <!-- Weather Conditions (From OpenWeatherMap) -->
+    <string name="condition_2xx">Badai</string>
+    <string name="condition_3xx">Lembab</string>
+    <string name="condition_500">Hujan Ringan</string>
+    <string name="condition_501">Hujan Sedang</string>
+    <string name="condition_502">Hujan Deras</string>
+    <string name="condition_503">Hujan Sangat Deras</string>
+    <string name="condition_504">Hujan Ekstrim</string>
+    <string name="condition_511">Hujan Dingin</string>
+    <string name="condition_520">Gerimis Ringan</string>
+    <string name="condition_521">Gerimis</string>
+    <string name="condition_522">Gerimis Besar</string>
+    <string name="condition_531">Gerimis Petir</string>
+    <string name="condition_600">Salju Ringan</string>
+    <string name="condition_601">Bersalju</string>
+    <string name="condition_602">Salju Deras</string>
+    <string name="condition_611">Hujan Salju</string>
+    <string name="condition_612">Gerimis Salju</string>
+    <string name="condition_615">Hujan dan Salju</string>
+    <string name="condition_616">Hujan dan Salju</string>
+    <string name="condition_620">Gerimis dan Salju</string>
+    <string name="condition_621">Gerimis dan Salju</string>
+    <string name="condition_622">Gerimis dan Salju</string>
+    <string name="condition_701">Berkabut</string>
+    <string name="condition_711">Berasap</string>
+    <string name="condition_721">Berpolusi</string>
+    <string name="condition_731">Pasir Berdebu</string>
+    <string name="condition_741">Kabut Tebal</string>
+    <string name="condition_751">Berpasir</string>
+    <string name="condition_761">Berdebu</string>
+    <string name="condition_762">Abu Vulkanik</string>
+    <string name="condition_771">Angin Kencang</string>
+    <string name="condition_781">Tornado</string>
+    <string name="condition_800">Cerah</string>
+    <string name="condition_801">Cerah Sekali</string>
+    <string name="condition_802">Sedikit Berawan</string>
+    <string name="condition_803">Berawan</string>
+    <string name="condition_804">Berawan Tebal</string>
+    <string name="condition_900">Tornado</string>
+    <string name="condition_901">Badai Tropis</string>
+    <string name="condition_902">Angin Puyuh</string>
+    <string name="condition_903">Dingin</string>
+    <string name="condition_904">Panas</string>
+    <string name="condition_905">Berangin</string>
+    <string name="condition_906">Hujan Es</string>
+    <string name="condition_951">Tenang</string>
+    <string name="condition_952">Berangin Ringan</string>
+    <string name="condition_953">Berangin Sedang</string>
+    <string name="condition_954">Berangin</string>
+    <string name="condition_955">Berangin Segar</string>
+    <string name="condition_956">Berangin Kencang</string>
+    <string name="condition_957">Berangin Kuat</string>
+    <string name="condition_958">Angin Sangat Kencang</string>
+    <string name="condition_959">Angin Sangat Parah</string>
+    <string name="condition_960">Badai</string>
+    <string name="condition_961">Badai Mematikan</string>
+    <string name="condition_962">Angin Puyuh</string>
+
+    <string name="condition_unknown">Tidak Diketahui (<xliff:g id="conditionId">%1$d</xliff:g>)</string>
+
+    <string name="format_temperature">Suhu %1.0f\u00B0C</string>
+
+    <string name="format_pressure">Tekanan Udara %.2f hPa</string>
+    <string name="format_humidity">Kelembaban %d%%</string>
+    <string name="today_weather">Cuaca hari ini: %s</string>
+
+    <string name="format_tides_extreme">%s setinggi %.2f meter</string>
+    <string name="format_catches">Hasil Tangkapan: %d</string>
+    <string name="format_distance">Jarak Tempuh: %.2f meter</string>
+    <string name="format_duration">Durasi: %02d jam %02d menit</string>
+    <string name="title_activity_tracking">Penangkapan Ikan</string>
+    <string name="btn_start">Mulai Aktivitas</string>
+    <string name="btn_stop">Berhenti dan Simpan Aktivitas</string>
+    <string name="info_tides">Pasang Surut adalah peristiwa naik turunnya permukaan air laut akibat gravitasi matahari dan bulan. Peristiwa pasang surut memengaruhi terjadinya arus laut yang dapat menentukan perilaku dan keberadaan ikan di laut. Lihat informasi tinggi pasang dan surut pada fitur Prediksi di aplikasi ini.</string>
+    <string name="info_iuu_fishing">Penangkapan ikan ilegal adalah kegiatan menangkap ikan yang melanggar hukum seperti mengambil ikan secara berlebihan, tidak melaporkan hasil tangkapan, dan melakukan penangkapan ikan di luar wilayah yang diijinkan. \nGunakan fitur Aktivitas pada aplikasi ini untuk membantu mencatat setiap kegiatan penangkapan ikan di dalam wilayah kedaulatan Indonesia.</string>
+    <string name="info_weather">Prediksi cuaca dapat membantu mengantisipasi cuaca yang akan terjadi saat kegiatan penangkapan ikan. Tekanan udara di permukaan laut juga dapat memengaruhi perilaku ikan pada saat besaran tertentu. Dapatkan informasi cuaca pada fitur Prediksi di aplikasi ini.</string>
+    <string name="info_port">Dapatkan informasi pelabuhan perikanan terdekat dengan lokasi kamu saat ini pada fitur Pelabuhan dalam aplikasi ini.</string>
+    <string name="format_city">%s, %s</string>
+</resources>

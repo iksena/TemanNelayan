@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_forecast"
+        android:icon="@drawable/icon_weather"
+        android:title="Prediksi" />
+
+    <item
+        android:id="@+id/navigation_explore"
+        android:icon="@drawable/menu_pelabuhan"
+        android:title="Pelabuhan" />
+
+    <item
+        android:id="@+id/navigation_activity"
+        android:icon="@drawable/menu_activity"
+        android:title="Aktivitas" />
+
+    <item
+        android:id="@+id/navigation_info"
+        android:icon="@drawable/menu_info"
+        android:title="Pengetahuan" />
+
+</menu>
