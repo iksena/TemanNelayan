@@ -13,7 +13,7 @@ public class TidalService {
 
     public interface TidalAPI {
         //GET: https://www.worldtides.info/api?extremes&heights&step=3600&key=612ee4a1-9b0a-476a-9454-a9b09a034342&lat=-8.750&lon=115.217
-        @GET("/api?extremes&heights&step=3600&key=90e58aa2-996b-4ecd-ac84-4a14d63ff984")
+        @GET("/api?extremes&heights&step=3600")
         Call<Tidal> getTidal(@Query("lat") double lat,
                              @Query("lon") double lon,
                              @Query("key") String key);

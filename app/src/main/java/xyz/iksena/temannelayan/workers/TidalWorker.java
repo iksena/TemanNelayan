@@ -42,28 +42,28 @@ public class TidalWorker extends Worker {
     @Override
     public Result doWork() {
         ApiKey key = realm.where(ApiKey.class).contains("name","worldtides").findFirst();
-        if (key==null){
-            ApiKeyService.getApi().getApiKeys().enqueue(new Callback<List<ApiKey>>() {
-                @Override
-                public void onResponse(Call<List<ApiKey>> call, Response<List<ApiKey>> response) {
-                    List<ApiKey> apiKeys = response.body();
-                    if (apiKeys!=null) {
-                        realm.executeTransaction(t -> {
-                            t.copyToRealmOrUpdate(apiKeys);
-                            apiKey = t.where(ApiKey.class).contains("name","worldtides")
-                                    .findFirst().getKey();
-                        });
-                    }
+        Callback<List<ApiKey>> callbackApiKey = new Callback<List<ApiKey>>() {
+            @Override
+            public void onResponse(Call<List<ApiKey>> call, Response<List<ApiKey>> response) {
+                List<ApiKey> apiKeys = response.body();
+                if (apiKeys!=null) {
+                    realm.executeTransaction(t -> {
+                        t.copyToRealmOrUpdate(apiKeys);
+                        apiKey = t.where(ApiKey.class).contains("name","worldtides")
+                                .findFirst().getKey();
+                    });
                 }
+            }
 
-                @Override
-                public void onFailure(Call<List<ApiKey>> call, Throwable t) {
+            @Override
+            public void onFailure(Call<List<ApiKey>> call, Throwable t) {
 
-                }
-            });
-        } else {
+            }
+        };
+        if (key==null)
+            ApiKeyService.getApi().getApiKeys().enqueue(callbackApiKey);
+        else
             apiKey = key.getKey();
-        }
         Call<Tidal> call = TidalService.getApi()
                 .getTidal(getLocation(context).lat, getLocation(context).lon,apiKey);
         call.enqueue(new Callback<Tidal>() {
@@ -88,10 +88,12 @@ public class TidalWorker extends Worker {
                         result = Result.success();
                     } else {
                         result = Result.failure();
+                        ApiKeyService.getApi().getApiKeys().enqueue(callbackApiKey);
                         Toast.makeText(context, "Gagal memuat data Pasang Surut", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     result = Result.failure();
+                    ApiKeyService.getApi().getApiKeys().enqueue(callbackApiKey);
                     Toast.makeText(context, "Gagal memuat data Pasang Surut", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -99,6 +101,7 @@ public class TidalWorker extends Worker {
             @Override
             public void onFailure(Call<Tidal> call, Throwable t) {
                 result = Result.failure();
+                ApiKeyService.getApi().getApiKeys().enqueue(callbackApiKey);
                 Toast.makeText(context, "Gagal memuat data Pasang Surut", Toast.LENGTH_SHORT).show();
             }
         });

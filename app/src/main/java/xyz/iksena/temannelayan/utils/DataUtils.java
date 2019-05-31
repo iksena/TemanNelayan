@@ -28,9 +28,14 @@ import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 import androidx.work.Worker;
 import io.realm.Realm;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import xyz.iksena.temannelayan.R;
 import xyz.iksena.temannelayan.models.Anchorage;
+import xyz.iksena.temannelayan.models.ApiKey;
 import xyz.iksena.temannelayan.models.Coord;
+import xyz.iksena.temannelayan.services.ApiKeyService;
 import xyz.iksena.temannelayan.workers.SolunarWorker;
 import xyz.iksena.temannelayan.workers.TidalWorker;
 import xyz.iksena.temannelayan.workers.WeatherWorker;
@@ -135,6 +140,32 @@ public class DataUtils {
                 .then(workSolunar(sPrefs))
                 .enqueue();
     }
+
+//    public static String getTidalApiKey(Realm realm){
+//        ApiKey key = realm.where(ApiKey.class).contains("name","worldtides").findFirst();
+//        if (key==null){
+//            ApiKeyService.getApi().getApiKeys().enqueue(new Callback<List<ApiKey>>() {
+//                @Override
+//                public void onResponse(Call<List<ApiKey>> call, Response<List<ApiKey>> response) {
+//                    List<ApiKey> apiKeys = response.body();
+//                    if (apiKeys!=null) {
+//                        realm.executeTransaction(t -> {
+//                            t.copyToRealmOrUpdate(apiKeys);
+//
+//                        });
+//                    }
+//                }
+//
+//                @Override
+//                public void onFailure(Call<List<ApiKey>> call, Throwable t) {
+//
+//                }
+//            });
+//        } else {
+//            apiKey = key.getKey();
+//        }
+//        return apiKey;
+//    }
 
 }
 
